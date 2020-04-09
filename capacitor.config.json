@@ -1,0 +1,8 @@
+{
+  "appId": "io.ionic.starter",
+  "appName": "spotitaggr",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "cordova": {}
+}

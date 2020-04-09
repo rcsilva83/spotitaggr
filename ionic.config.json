@@ -1,0 +1,7 @@
+{
+  "name": "spotitaggr",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
