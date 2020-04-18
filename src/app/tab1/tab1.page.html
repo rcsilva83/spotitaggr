@@ -13,5 +13,10 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <!-- <app-explore-container name="Tab 1 page"></app-explore-container> -->
+  <ion-list *ngFor="let playlist of playlists">
+    <ion-item>
+      <ion-label>{{playlist.name}}</ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
