@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SpotifyService } from 'src/app/services/spotify.service';
 
 @Component({
   selector: 'app-artists',
@@ -6,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./artists.component.scss'],
 })
 export class ArtistsComponent implements OnInit {
+  artists: SpotifyApi.ArtistObjectSimplified[];
 
-  constructor() { }
+  constructor(private spotifyService: SpotifyService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.spotifyService.getAlbuns().then((data) => {
+      this.artists = data.items.map(i => i.album.artists[0]);
+    });
+  }
 
 }

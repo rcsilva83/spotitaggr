@@ -1,3 +1,5 @@
-<p>
-  artists works!
-</p>
+<ion-list *ngFor="let artist of artists">
+  <ion-item>
+    <ion-label>{{artist.name}}</ion-label>
+  </ion-item>
+</ion-list>
