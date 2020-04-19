@@ -1,0 +1,5 @@
+<ion-list *ngFor="let playlist of playlists">
+  <ion-item button routerLink="./playlist/{{playlist.id}}">
+    <ion-label>{{playlist.name}}</ion-label>
+  </ion-item>
+</ion-list>

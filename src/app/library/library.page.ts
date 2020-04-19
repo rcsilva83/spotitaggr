@@ -8,21 +8,10 @@ import SpotifyWebApi from 'spotify-web-api-js';
   styleUrls: ['library.page.scss']
 })
 export class LibraryPage implements OnInit {
-  playlists: SpotifyApi.PlaylistObjectSimplified[];
+  currentSegment = 'playlists';
 
-  constructor(private spotifyService: SpotifyService) {}
+  constructor() {}
 
   ngOnInit() {
-    this.spotifyService.getPlaylists().then((data) => {
-      this.playlists = data.items;
-    });
-  }
-
-  segmentChanged(event: any) {
-    if (event.detail.value === 'playlists') {
-      console.log('Show playlists');
-    } else {
-      console.log('Show artists');
-    }
   }
 }
