@@ -8,7 +8,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SpotifyService } from './spotify.service';
+import { SpotifyService } from './services/spotify.service';
 
 @NgModule({
   declarations: [AppComponent],
