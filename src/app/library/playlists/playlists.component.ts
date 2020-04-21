@@ -13,7 +13,7 @@ export class PlaylistsComponent implements OnInit {
 
   ngOnInit() {
     this.spotifyService.getPlaylists().then((data) => {
-      this.playlists = data.items;
+      this.playlists = data.items.filter(p => !p.name.startsWith('#'));
     });
   }
 
