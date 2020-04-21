@@ -10,4 +10,20 @@ export class SpotifyService {
   getPlaylists() {
     return this.spotifyApi.getUserPlaylists();
   }
+
+  getPlaylist(id: string) {
+    return this.spotifyApi.getPlaylist(id);
+  }
+
+  getArtists() {
+    return this.spotifyApi.getFollowedArtists();
+  }
+
+  getArtistAlbums(artistId: string) {
+    return this.spotifyApi.getArtistAlbums(artistId);
+  }
+
+  getAlbumTracks(albumId: string) {
+    return this.spotifyApi.getAlbumTracks(albumId);
+  }
 }

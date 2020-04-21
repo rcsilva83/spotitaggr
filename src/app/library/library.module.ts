@@ -8,6 +8,8 @@ import { PlaylistsComponent } from './playlists/playlists.component';
 import { PlaylistDetailsComponent } from './playlists/playlist-details/playlist-details.component';
 import { Route } from '@angular/compiler/src/core';
 import { ArtistsComponent } from './artists/artists.component';
+import { ArtistComponent } from './artists/artist/artist.component';
+import { AlbumComponent } from './artists/artist/album/album.component';
 
 const routes: Routes = [
   {
@@ -17,6 +19,14 @@ const routes: Routes = [
   {
     path: 'playlist/:id',
     component: PlaylistDetailsComponent
+  },
+  {
+    path: 'artist/:id',
+    component: ArtistComponent
+  },
+  {
+    path: 'album/:id',
+    component: AlbumComponent
   }
 ];
 
@@ -31,7 +41,9 @@ const routes: Routes = [
     LibraryPage,
     PlaylistsComponent,
     PlaylistDetailsComponent,
-    ArtistsComponent
+    ArtistsComponent,
+    ArtistComponent,
+    AlbumComponent
   ]
 })
 export class LibraryPageModule {}

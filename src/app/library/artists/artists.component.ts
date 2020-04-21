@@ -7,13 +7,13 @@ import { SpotifyService } from 'src/app/services/spotify.service';
   styleUrls: ['./artists.component.scss'],
 })
 export class ArtistsComponent implements OnInit {
-  artists: SpotifyApi.ArtistObjectSimplified[];
+  artists: SpotifyApi.ArtistObjectFull[];
 
   constructor(private spotifyService: SpotifyService) { }
 
   ngOnInit() {
-    this.spotifyService.getAlbuns().then((data) => {
-      this.artists = data.items.map(i => i.album.artists[0]);
+    this.spotifyService.getArtists().then((data) => {
+      this.artists = data.artists.items;
     });
   }
 

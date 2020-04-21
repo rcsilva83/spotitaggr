@@ -1,0 +1,5 @@
+<ion-list *ngFor="let album of albums">
+  <ion-item button routerLink="../../album/{{album.id}}">
+    <ion-label>{{album.name}}</ion-label>
+  </ion-item>
+</ion-list>

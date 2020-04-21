@@ -1,5 +1,5 @@
 <ion-list *ngFor="let artist of artists">
-  <ion-item>
+  <ion-item button routerLink="./artist/{{artist.id}}">
     <ion-label>{{artist.name}}</ion-label>
   </ion-item>
 </ion-list>
