@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TagService } from '../services/tag.service';
+import { ModalController } from '@ionic/angular';
+import { NewTagComponent } from './new-tag/new-tag.component';
 
 @Component({
   selector: 'app-tags',
@@ -9,7 +11,7 @@ import { TagService } from '../services/tag.service';
 export class TagsPage implements OnInit {
   tags: string[];
 
-  constructor(private tagService: TagService) { }
+  constructor(private tagService: TagService, private modalController: ModalController) { }
 
   ngOnInit() {
     this.tagService.getTags().then((data) => {
@@ -17,4 +19,14 @@ export class TagsPage implements OnInit {
     });
   }
 
+  async onNewTag() {
+    const modal = await this.modalController.create({
+      component: NewTagComponent
+    });
+    return await modal.present();
+  }
+
+  onSave(name: string) {
+    this.tagService.saveTag(name);
+  }
 }

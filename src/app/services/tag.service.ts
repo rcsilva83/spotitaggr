@@ -12,4 +12,10 @@ export class TagService {
     return this.spotifyService.getPlaylists()
       .then((data) => data.items.filter(p => p.name.startsWith('#')).map(p => p.name));
   }
+  saveTag(name: string) {
+    if (!name.startsWith('#')) {
+      name = `#${name}`;
+    }
+    this.spotifyService.createPlaylist(name, false);
+  }
 }
