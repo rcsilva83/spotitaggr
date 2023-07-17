@@ -53,7 +53,7 @@ export default {
 		gen.generatePlaylist("4eyu0emr8qYu18RYsKArqZ", ["#rock", "#pop"])
 					.then(() => new Response(null, {status : 200}))
 	},
-	async fetch(req: Request, env: Env): Promise<void> {
+	async fetch(req: Request, env: Env): Promise<Response> {
 		let clientId = await env.SPOTIFY_CREDENTIALS.get("clientId")
 		let acessToken = await env.SPOTIFY_CREDENTIALS.get("acessToken")!
 		let refreshToken = await env.SPOTIFY_CREDENTIALS.get("refreshToken")!
@@ -61,7 +61,7 @@ export default {
 		const spotify = new SpotifyClient(clientId!, acessToken!, refreshToken!);
 
 		const gen = new Generator(spotify)
-		gen.generatePlaylist("4eyu0emr8qYu18RYsKArqZ", ["#rock", "#pop"])
+		return gen.generatePlaylist("4eyu0emr8qYu18RYsKArqZ", ["#rock", "#pop"])
 					.then(() => new Response(null, {status : 200}))
 	}
 };

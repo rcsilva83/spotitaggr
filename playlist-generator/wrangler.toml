@@ -3,6 +3,10 @@ main = "src/worker.ts"
 compatibility_flags = [ "nodejs_compat" ]
 compatibility_date = "2023-05-15"
 
+kv_namespaces = [
+    { binding = "SPOTIFY_CREDENTIALS", id = "44e5784a1fe846ec846586e634b6f799" }
+]
+
 # Cron Triggers
 # Docs: https://developers.cloudflare.com/workers/platform/triggers/cron-triggers/
 # Configuration: https://developers.cloudflare.com/workers/wrangler/configuration/#triggers
